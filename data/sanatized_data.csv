@@ -1,0 +1,91 @@
+TimePeriod,GeoTypeDesc,Borough,Geography,Area,Annual mean mcg/m3,Summer mean mcg/m3,Winter mean mcg/m3
+2023,Citywide,-,New York City,New York City,6.7,8.8,6.1
+2023,Borough,Bronx,Bronx,Bronx,6.9,9.3,6.6
+2023,Borough,Brooklyn,Brooklyn,Brooklyn,6.7,8.8,6.3
+2023,Borough,Manhattan,Manhattan,Manhattan,7.3,9.3,7.2
+2023,Borough,Queens,Queens,Queens,6.6,8.8,6.1
+2023,Borough,Staten Island,Staten Island,Staten Island,6.2,8.4,5.5
+2022,Citywide,-,New York City,New York City,5.8,6.4,6.8
+2022,Borough,Bronx,Bronx,Bronx,6.1,7.1,7.3
+2022,Borough,Brooklyn,Brooklyn,Brooklyn,5.8,6.3,6.9
+2022,Borough,Manhattan,Manhattan,Manhattan,7,7.5,7.9
+2022,Borough,Queens,Queens,Queens,5.7,6.4,6.7
+2022,Borough,Staten Island,Staten Island,Staten Island,5.2,5.8,6.1
+2021,Citywide,-,New York City,New York City,6.5,8.3,6.7
+2021,Borough,Bronx,Bronx,Bronx,6.6,8.6,6.6
+2021,Borough,Brooklyn,Brooklyn,Brooklyn,6.6,8.5,6.9
+2021,Borough,Manhattan,Manhattan,Manhattan,7.4,9.4,7.5
+2021,Borough,Queens,Queens,Queens,6.5,8.1,6.7
+2021,Borough,Staten Island,Staten Island,Staten Island,6.2,7.9,6.5
+2020,Citywide,-,New York City,New York City,6.1,7,7.4
+2020,Borough,Bronx,Bronx,Bronx,6.1,7.2,7
+2020,Borough,Brooklyn,Brooklyn,Brooklyn,6.1,6.9,7.6
+2020,Borough,Manhattan,Manhattan,Manhattan,7.2,7.8,9.1
+2020,Borough,Queens,Queens,Queens,6.1,6.9,7.6
+2020,Borough,Staten Island,Staten Island,Staten Island,5.5,6.6,6.7
+2019,Citywide,-,New York City,New York City,6.6,7.9,7.2
+2019,Borough,Bronx,Bronx,Bronx,6.9,8,7.5
+2019,Borough,Brooklyn,Brooklyn,Brooklyn,6.7,8.2,7.3
+2019,Borough,Manhattan,Manhattan,Manhattan,8.3,9.4,9.3
+2019,Borough,Queens,Queens,Queens,6.5,7.7,7.1
+2019,Borough,Staten Island,Staten Island,Staten Island,5.9,7.4,6.5
+2018,Citywide,-,New York City,New York City,7,8.3,8.2
+2018,Borough,Bronx,Bronx,Bronx,7.2,8.6,8.3
+2018,Borough,Brooklyn,Brooklyn,Brooklyn,7.2,8.4,8.5
+2018,Borough,Manhattan,Manhattan,Manhattan,8.5,9.7,9.6
+2018,Borough,Queens,Queens,Queens,6.8,8.3,7.9
+2018,Borough,Staten Island,Staten Island,Staten Island,6.4,7.5,7.8
+2017,Citywide,-,New York City,New York City,7.4,8.9,7.9
+2017,Borough,Bronx,Bronx,Bronx,7.7,9.6,8.3
+2017,Borough,Brooklyn,Brooklyn,Brooklyn,7.5,9.1,7.9
+2017,Borough,Manhattan,Manhattan,Manhattan,8.7,10.4,9
+2017,Borough,Queens,Queens,Queens,7.2,8.8,8
+2017,Borough,Staten Island,Staten Island,Staten Island,6.8,8.1,7.1
+2016,Citywide,-,New York City,New York City,7.4,8.1,8
+2016,Borough,Bronx,Bronx,Bronx,7.8,8.3,8.4
+2016,Borough,Brooklyn,Brooklyn,Brooklyn,7.8,8.3,8.4
+2016,Borough,Manhattan,Manhattan,Manhattan,9,9.5,9.4
+2016,Borough,Queens,Queens,Queens,7.2,7.8,7.6
+2016,Borough,Staten Island,Staten Island,Staten Island,6.8,7.8,7.5
+2015,Citywide,-,New York City,New York City,8.6,9.4,9.1
+2015,Borough,Bronx,Bronx,Bronx,9.2,9.9,10.2
+2015,Borough,Brooklyn,Brooklyn,Brooklyn,8.7,9.5,9
+2015,Borough,Manhattan,Manhattan,Manhattan,10.2,10.8,10.9
+2015,Borough,Queens,Queens,Queens,8.3,9.2,8.9
+2015,Borough,Staten Island,Staten Island,Staten Island,7.7,8.7,8.4
+2014,Citywide,-,New York City,New York City,8.9,8.5,11.9
+2014,Borough,Bronx,Bronx,Bronx,9.3,8.8,12.5
+2014,Borough,Brooklyn,Brooklyn,Brooklyn,9.1,8.8,11.9
+2014,Borough,Manhattan,Manhattan,Manhattan,10.8,10.3,14.1
+2014,Borough,Queens,Queens,Queens,8.6,8.2,11.2
+2014,Borough,Staten Island,Staten Island,Staten Island,8.4,7.8,11.8
+2013,Citywide,-,New York City,New York City,8.6,10.2,10.3
+2013,Borough,Bronx,Bronx,Bronx,9.1,10.4,11.2
+2013,Borough,Brooklyn,Brooklyn,Brooklyn,8.7,10.3,10.3
+2013,Borough,Manhattan,Manhattan,Manhattan,10.7,11.8,12.8
+2013,Borough,Queens,Queens,Queens,8.4,10.1,9.9
+2013,Borough,Staten Island,Staten Island,Staten Island,8,9.3,9.7
+2012,Citywide,-,New York City,New York City,8.9,10.3,9.2
+2012,Borough,Bronx,Bronx,Bronx,9.5,10.5,9.9
+2012,Borough,Brooklyn,Brooklyn,Brooklyn,9,10.4,9.2
+2012,Borough,Manhattan,Manhattan,Manhattan,10.9,11.8,11.3
+2012,Borough,Queens,Queens,Queens,8.6,10.1,8.8
+2012,Borough,Staten Island,Staten Island,Staten Island,8.3,9.9,8.4
+2011,Citywide,-,New York City,New York City,10.1,11.5,12.6
+2011,Borough,Bronx,Bronx,Bronx,10.8,11.7,13.8
+2011,Borough,Brooklyn,Brooklyn,Brooklyn,10.2,11.6,12.6
+2011,Borough,Manhattan,Manhattan,Manhattan,11.9,12.9,14.8
+2011,Borough,Queens,Queens,Queens,9.8,11.2,12.1
+2011,Borough,Staten Island,Staten Island,Staten Island,9.4,11.1,11.7
+2010,Citywide,-,New York City,New York City,9.5,11.8,9.9
+2010,Borough,Bronx,Bronx,Bronx,10.1,12.1,10.9
+2010,Borough,Brooklyn,Brooklyn,Brooklyn,9.7,12,10
+2010,Borough,Manhattan,Manhattan,Manhattan,11.6,13.4,12
+2010,Borough,Queens,Queens,Queens,9.2,11.5,9.4
+2010,Borough,Staten Island,Staten Island,Staten Island,8.8,11.4,9.1
+2009,Citywide,-,New York City,New York City,10.4,10.7,12.9
+2009,Borough,Bronx,Bronx,Bronx,11,10.7,14.1
+2009,Borough,Brooklyn,Brooklyn,Brooklyn,10.5,10.9,12.9
+2009,Borough,Manhattan,Manhattan,Manhattan,12.6,12.6,15.3
+2009,Borough,Queens,Queens,Queens,10,10.3,12.6
+2009,Borough,Staten Island,Staten Island,Staten Island,9.8,10.5,11.8
