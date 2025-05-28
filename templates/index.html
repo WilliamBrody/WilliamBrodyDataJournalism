@@ -11,9 +11,21 @@
         {% include 'NYC_boroughs.svg' %}
 
         <p>
-            insert something insightful
+            insert something insightful {{ requestedYear }}
         </p>
         
+        <div>
+          <form action="/" method="GET">
+            <label for="year">Choose a year:</label><br>
+            <select name="year" id="year_select">
+              {% for y in all_years %}
+              <option value="{{y}}">{{y}}</option>
+              {% endfor %}
+            </select>
+            <input type="submit" value="Submit">
+          <form>
+        </div>
+
         {% include 'footer.html' %}
     </body>
 </html>

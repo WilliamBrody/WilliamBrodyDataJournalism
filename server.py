@@ -14,8 +14,18 @@ def index():
     all_boroughs = []
     for key in f:
         all_boroughs.append(key)
-    
-    return render_template('index.html', all_borough=all_boroughs)
+
+    # func for getting years for dropdown
+    all_years = []
+    for i in f["Ny"]:
+        all_years.append(i)
+    # for passing the year to the index
+    requestedYear = request.args.get('year')
+    if requestedYear == 'None':
+        print("request average!")
+        requestedYear = "NYC average from year-year"
+    print(requestedYear)
+    return render_template('index.html', all_borough=all_boroughs, all_years=all_years, requestedYear=requestedYear)
 
 
 @app.route('/about')
