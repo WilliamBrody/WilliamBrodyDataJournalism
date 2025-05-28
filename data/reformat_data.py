@@ -56,7 +56,7 @@ print()
 f1.close()
 
 #Save the json object to a file
-f2 = open("life_expectancy.json", "w")
+f2 = open("formatted_aq.json", "w")
 json.dump(dictionary, f2, indent = 4)
 
 
