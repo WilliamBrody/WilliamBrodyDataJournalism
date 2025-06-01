@@ -21,11 +21,23 @@ def index():
         all_years.append(i)
     # for passing the year to the index
     requestedYear = request.args.get('year')
-    if requestedYear == 'None':
+    
+    if requestedYear == None:
+        print(type(requestedYear))
         print("request average!")
         requestedYear = "NYC average from year-year"
+
     print(requestedYear)
-    return render_template('index.html', all_borough=all_boroughs, all_years=all_years, requestedYear=requestedYear)
+
+    brightData = [] # order Mh, Br, Qs, Bx, Si ranging 0-15 to 0-100
+    brightData.append(0 + ((100 - 0) / (15 - 0)) * (float(f['Mh'][requestedYear]) - 0))
+    brightData.append(0 + ((100 - 0) / (15 - 0)) * (float(f['Br'][requestedYear]) - 0))
+    brightData.append(0 + ((100 - 0) / (15 - 0)) * (float(f['Qs'][requestedYear]) - 0))
+    brightData.append(0 + ((100 - 0) / (15 - 0)) * (float(f['Bx'][requestedYear]) - 0))
+    brightData.append(0 + ((100 - 0) / (15 - 0)) * (float(f['Si'][requestedYear]) - 0))
+    print(brightData)
+
+    return render_template('index.html', all_borough=all_boroughs, all_years=all_years, requestedYear=requestedYear, boroughBright=brightData)
 
 
 @app.route('/about')

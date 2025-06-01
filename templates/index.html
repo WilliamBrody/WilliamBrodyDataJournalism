@@ -1,31 +1,81 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        
-    </head>
-    <body>
-        {% include 'header.html' %}
-        {% include 'navbar.html' %}
 
+<head>
 
-        {% include 'NYC_boroughs.svg' %}
+</head>
 
-        <p>
-            insert something insightful {{ requestedYear }}
-        </p>
-        
-        <div>
-          <form action="/" method="GET">
-            <label for="year">Choose a year:</label><br>
-            <select name="year" id="year_select">
-              {% for y in all_years %}
-              <option value="{{y}}">{{y}}</option>
-              {% endfor %}
-            </select>
-            <input type="submit" value="Submit">
-          <form>
-        </div>
+<body>
+  {% include 'header.html' %}
+  {% include 'navbar.html' %}
 
-        {% include 'footer.html' %}
-    </body>
+  <div id="maps">
+    {% include 'NYC_boroughs.svg' %}
+    <script>
+      /*
+      var x = 100 - {{ boroughBright[0] }}
+      const elementsArrMh = document.getElementsByClassName("Manhattan");
+      for (let i = 0; i < elementsArrMh.length; i++) {
+        elementsArrMh[i].setAttribute("fill", "hsl(80, 40%, " + x + "%)");
+      }
+      document.getElementById("Manhattan").setAttribute("fill", "hsl(80, 40%, " + x + "%)");
+      console.log(x);
+
+      x = 100 - {{ boroughBright[1] }}
+      const elementsArrBr = document.getElementsByClassName("Brooklyn");
+
+      for (let i = 0; i < elementsArrBr.length; i++) {
+        elementsArrBr[i].setAttribute("fill", "hsl(80, 40%, " + x + "%)");
+      }
+
+      x = 100 - {{ boroughBright[2] }}
+      const elementsArrQs = document.getElementsByClassName("Queens");
+
+      for (let i = 0; i < elementsArrQs.length; i++) {
+        elementsArrQs[i].setAttribute("fill", "hsl(80, 40%, " + x + "%)");
+      }
+      x = 100 - {{ boroughBright[3] }}
+      const elementsArrBx = document.getElementsByClassName("The_Bronx");
+
+      for (let i = 0; i < elementsArrBx.length; i++) {
+        elementsArrBx[i].setAttribute("fill", "hsl(80, 40%, " + x + "%)");
+      }
+      x = 100 - {{ boroughBright[4] }}
+      const elementsArrSi = document.getElementsByClassName("Straten_Island");
+
+      for (let i = 0; i < elementsArrSi.length; i++) {
+        elementsArrSi[i].setAttribute("fill", "hsl(80, 40%, " + x + "%)");
+      }
+      */
+      var x = 100 - {{ boroughBright[0] }}
+      document.getElementById("Manhattan").setAttribute("fill", "hsl(80, 40%, " + x + "%)");
+      x = 100 - {{ boroughBright[1] }}
+      document.getElementById("Brooklyn").setAttribute("fill", "hsl(80, 40%, " + x + "%)");
+      x = 100 - {{ boroughBright[2] }}
+      document.getElementById("Queens").setAttribute("fill", "hsl(80, 40%, " + x + "%)");
+      x = 100 - {{ boroughBright[3] }}
+      document.getElementById("The_Bronx").setAttribute("fill", "hsl(80, 40%, " + x + "%)");
+      x = 100 - {{ boroughBright[4] }}
+      document.getElementById("Straten_Island").setAttribute("fill", "hsl(80, 40%, " + x + "%)");
+    </script>
+  </div>
+  <p>
+    insert something insightful {{ requestedYear }}
+  </p>
+
+  <div>
+    <form action="/" method="GET">
+      <label for="year">Choose a year:</label><br>
+      <select name="year" id="year_select">
+        {% for y in all_years %}
+        <option value="{{y}}">{{y}}</option>
+        {% endfor %}
+      </select>
+      <input type="submit" value="Submit">
+      <form>
+  </div>
+
+  {% include 'footer.html' %}
+</body>
+
 </html>
