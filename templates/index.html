@@ -58,6 +58,16 @@
       x = 100 - {{ boroughBright[4] }}
       document.getElementById("Straten_Island").setAttribute("fill", "hsl(80, 40%, " + x + "%)");
     </script>
+    <div id="legend" style="display: flex; justify-content: center;">
+      
+      <svg fill="#ececec" stroke="black" viewbox="0 0 200 65" width="50%" height="10%" xmlns="http://www.w3.org/2000/svg">
+        {% for i in range(10) %}
+        <rect x="{{40+i+11*i}}" y="10" width="12" height="30" stroke-width="0.1" fill="hsl(80, 40%, {{100-i*10}}%)"/>
+        <text x="{{46+i+11*i}}" y="45" text-anchor="middle" stroke-width="0.3"  font-size="0.3rem">{{ ((i+1) - 0) / (10 - 0) * (15 - 0) + 0 }}</text>
+        {% endfor %}
+        <text x="100" y="60" text-anchor="middle" stroke-width="0.6"  font-size="0.6rem">Average *POLLUTION* (years)</text>
+      </svg>
+    </div>
   </div>
   <p>
     insert something insightful {{ requestedYear }}

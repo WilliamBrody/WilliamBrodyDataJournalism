@@ -30,11 +30,27 @@ def index():
     print(requestedYear)
 
     brightData = [] # order Mh, Br, Qs, Bx, Si ranging 0-15 to 0-100
-    brightData.append(0 + ((100 - 0) / (15 - 0)) * (float(f['Mh'][requestedYear]) - 0))
-    brightData.append(0 + ((100 - 0) / (15 - 0)) * (float(f['Br'][requestedYear]) - 0))
-    brightData.append(0 + ((100 - 0) / (15 - 0)) * (float(f['Qs'][requestedYear]) - 0))
-    brightData.append(0 + ((100 - 0) / (15 - 0)) * (float(f['Bx'][requestedYear]) - 0))
-    brightData.append(0 + ((100 - 0) / (15 - 0)) * (float(f['Si'][requestedYear]) - 0))
+    if requestedYear != 'NYC average from year-year':
+        brightData.append(0 + ((100 - 0) / (15 - 0)) * (float(f['Mh'][requestedYear][0]) - 0))
+        brightData.append(0 + ((100 - 0) / (15 - 0)) * (float(f['Br'][requestedYear][0]) - 0))
+        brightData.append(0 + ((100 - 0) / (15 - 0)) * (float(f['Qs'][requestedYear][0]) - 0))
+        brightData.append(0 + ((100 - 0) / (15 - 0)) * (float(f['Bx'][requestedYear][0]) - 0))
+        brightData.append(0 + ((100 - 0) / (15 - 0)) * (float(f['Si'][requestedYear][0]) - 0))
+    else:
+        brightData = [0, 0, 0, 0, 0]
+        for i in range(2009, 2023):
+            n = str(i)
+            brightData[0] += 0 + ((100 - 0) / (15 - 0)) * (float(f['Mh'][n][0]) - 0)
+            brightData[1] += 0 + ((100 - 0) / (15 - 0)) * (float(f['Br'][n][0]) - 0)
+            brightData[2] += 0 + ((100 - 0) / (15 - 0)) * (float(f['Qs'][n][0]) - 0)
+            brightData[3] += 0 + ((100 - 0) / (15 - 0)) * (float(f['Bx'][n][0]) - 0)
+            brightData[4] += 0 + ((100 - 0) / (15 - 0)) * (float(f['Si'][n][0]) - 0)
+        brightData[0] = brightData[0] / 15
+        brightData[1] = brightData[1] / 15
+        brightData[2] = brightData[2] / 15
+        brightData[3] = brightData[3] / 15
+        brightData[4] = brightData[4] / 15
+
     print(brightData)
 
     return render_template('index.html', all_borough=all_boroughs, all_years=all_years, requestedYear=requestedYear, boroughBright=brightData)
@@ -49,7 +65,14 @@ def about():
 @app.route('/borough')
 def borough():
     requestedborough = request.args.get('borough')
-    return render_template('micro.html', borough=requestedborough, endpoints=[[1, 100, 212],[],[],[]])
+    print(requestedborough)
+    # average, summer, winter
+    polGraphDat = [[],[],[]]
+    for i in range(2009, 2023):
+        polGraphDat[0].append(float(f[requestedborough][str(i)][0]))
+        polGraphDat[1].append(float(f[requestedborough][str(i)][1]))
+        polGraphDat[2].append(float(f[requestedborough][str(i)][2]))
+    return render_template('micro.html', borough=requestedborough, endpoints=polGraphDat)
 
 
 

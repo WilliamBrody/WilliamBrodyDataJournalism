@@ -27,17 +27,17 @@ print(dictionary)
 
 for i in range(len(lines)):
      if lines[i][1] == 'Citywide':
-         dictionary['Ny'][lines[i][0]] = lines[i][6]
+         dictionary['Ny'][lines[i][0]] = [lines[i][5], lines[i][6], lines[i][7]]
      if lines[i][2] == 'Manhattan':
-         dictionary['Mh'][lines[i][0]] = lines[i][6]
+         dictionary['Mh'][lines[i][0]] = [lines[i][5], lines[i][6], lines[i][7]]
      if lines[i][2] == 'Bronx':
-         dictionary['Bx'][lines[i][0]] = lines[i][6]
+         dictionary['Bx'][lines[i][0]] = [lines[i][5], lines[i][6], lines[i][7]]
      if lines[i][2] == 'Queens':
-         dictionary['Qs'][lines[i][0]] = lines[i][6]
+         dictionary['Qs'][lines[i][0]] = [lines[i][5], lines[i][6], lines[i][7]]
      if lines[i][2] == 'Staten Island':
-         dictionary['Si'][lines[i][0]] = lines[i][6]
+         dictionary['Si'][lines[i][0]] = [lines[i][5], lines[i][6], lines[i][7]]
      if lines[i][2] == 'Brooklyn':
-         dictionary['Br'][lines[i][0]] = lines[i][6]
+         dictionary['Br'][lines[i][0]] = [lines[i][5], lines[i][6], lines[i][7]]
 
 print(dictionary)
 '''
