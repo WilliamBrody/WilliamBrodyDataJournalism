@@ -1,10 +1,19 @@
+@font-face {
+    font-family: 'ComicPapyrus'; /*a name to be used later*/
+    src: url("ComicPapyrus.ttf"); /*URL to font*/
+}
+
 body{
     background-color: #b60dff;
-    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    /* font-family: "Comic Sans MS", "Comic Sans", cursive; */
+    font-family: "ComicPapyrus";
+
+
   }
   
   svg{
     border-style: solid;
     border-width: 1px;
+    display: flex;
+    justify-content: center;
   }
-  

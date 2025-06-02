@@ -9,6 +9,31 @@ f = json.load(f)
 
 app = Flask(__name__, static_url_path='', static_folder='static')
 
+
+"""
+QUESTIONS FOR MR. GOHDE:
+- how should i embedd images in my about page
+    - put them in the static folder, and then link normally (no jinja)
+    - what else should really be in about page?
+        - what the project is
+        - vocab
+        - link to data
+        - prototypes
+        - etc
+    
+    
+- how do i go about generating the dynamic text???
+    - if statements
+    - dynamically generate adjectives
+- what should be in my footer?(what even is a footer)
+    - link to data
+    - will brody data journalism 
+    - etc
+    
+    - do i put data source and my contact info?
+- how should i clean up my graph (all the plots are too close together)
+"""
+
 @app.route('/')
 def index():
     all_boroughs = []
@@ -66,12 +91,13 @@ def about():
 def borough():
     requestedborough = request.args.get('borough')
     print(requestedborough)
-    # average, summer, winter
-    polGraphDat = [[],[],[]]
+    # average, summer, winter, nyc avg
+    polGraphDat = [[],[],[],[]]
     for i in range(2009, 2023):
         polGraphDat[0].append(float(f[requestedborough][str(i)][0]))
         polGraphDat[1].append(float(f[requestedborough][str(i)][1]))
         polGraphDat[2].append(float(f[requestedborough][str(i)][2]))
+        polGraphDat[3].append(float(f['Ny'][str(i)][2]))
     return render_template('micro.html', borough=requestedborough, endpoints=polGraphDat)
 
 
