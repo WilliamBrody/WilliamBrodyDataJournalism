@@ -3,17 +3,17 @@
     <line class="line" x1="30" y1="30" x2="30" y2="480" stroke-width="8" stroke="#000000"  stroke-linecap="round"></line>
     <line class="line" x1="30" y1="480" x2="490" y2="480" stroke-width="8" stroke="#000000"  stroke-linecap="round"></line>
     
-    <text text-anchor="middle" stroke-width="0.3" transform="translate(0, 10) rotate(90)" x="300" font-size="1.2rem" y="5">Average life expectancy (years)</text>
+    <text text-anchor="middle" stroke-width="0.3" transform="translate(0, 10) rotate(90)" x="300" font-size="1.2rem" y="5">Pollution in {{borough}} *UNITS*</text>
     <text text-anchor="middle" stroke-width="0.3"  x="250" font-size="1.2rem" y="525">Year</text>
 
-    {% for i in range(20, 480, 74) %}
-    <text x="{{i+30}}" y="500" text-anchor="middle" stroke-width="0.3" font-size="0.6rem">{{((1960 + (10*(i/74)))) | int}}</text>
-    <line class="line" x1="{{i+30}}" y1="480" x2="{{i+30}}" y2="490" stroke-width="2" stroke="#000000"  stroke-linecap="round"></line>
+    {% for i in range(20, 480, 33) %}
+    <text x="{{i+33}}" y="500" text-anchor="middle" stroke-width="0.3" font-size="0.6rem">{{((2009 + ((i/33)))) | int}}</text>
+    <line class="line" x1="{{i+33}}" y1="480" x2="{{i+33}}" y2="490" stroke-width="2" stroke="#000000"  stroke-linecap="round"></line>
 
     {% endfor %}
-    {% for i in range(20, 480, 26) %}
-    <text x="14" y="{{i+20}}" text-anchor="middle" stroke-width="0.3" font-size="0.6rem">{{(85-(i/26)| int)}}</text>
-    <line class="line" x1="18" y1="{{i+20}}" x2="30" y2="{{i+20}}" stroke-width="2" stroke="#000000"  stroke-linecap="round"></line>
+    {% for i in range(20, 480, 31) %}
+    <text x="14" y="{{i+31}}" text-anchor="middle" stroke-width="0.3" font-size="0.6rem">{{(15-(i/31)| int)}}</text>
+    <line class="line" x1="18" y1="{{i+31}}" x2="30" y2="{{i+31}}" stroke-width="2" stroke="#000000"  stroke-linecap="round"></line>
 
     {% endfor %}
 
