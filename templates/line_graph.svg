@@ -17,11 +17,32 @@
 
     {% endfor %}
 
-
     {% for point in endpoints[0] %}
-    <line class="line" x1="{{   ((loop.index0)*34.285714)   }}" y1="{{   ((((point - 0) * (480 - 20)) / (15 - 0)) + 20)   }}" x2="{{     ((loop.index0+1)*34.285714)   }}" y2="{{    ((((point - 0) * (480 - 20)) / (15 - 0)) + 20)    }}" stroke-width="4" stroke="rgb(255, 0, 0)"  stroke-linecap="round"/>
+    {% if loop.index0 == 13 %}
+    <line class="line" x1="{{   (35+(loop.index0)*32.8571428)   }}" y1="{{   ((((15-point - 0) * (480 - 20)) / (15 - 0)) + 20)   }}" x2="{{     (35+(loop.index0+1)*32.8571428)   }}" y2="{{    ((((15-point - 0) * (480 - 20)) / (15 - 0)) + 20)    }}" stroke-width="4" stroke="rgb(184, 96, 24)"  stroke-linecap="round"/>
 
+    {% else %}
+    <line class="line" x1="{{   (35+(loop.index0)*32.8571428)   }}" y1="{{   ((((15-point - 0) * (480 - 20)) / (15 - 0)) + 20)   }}" x2="{{     (35+(loop.index0+1)*32.8571428)   }}" y2="{{    ((((15-endpoints[0][loop.index0+1] - 0) * (480 - 20)) / (15 - 0)) + 20)    }}" stroke-width="4" stroke="rgb(184, 96, 24)"  stroke-linecap="round"/>
+    {% endif %}
+    {% endfor %}
+ 
+    {% for point in endpoints[1] %}
+    {% if loop.index0 == 13 %}
+    <line class="line" x1="{{   (35+(loop.index0)*32.8571428)   }}" y1="{{   ((((15-point - 0) * (480 - 20)) / (15 - 0)) + 20)   }}" x2="{{     (35+(loop.index0+1)*32.8571428)   }}" y2="{{    ((((15-point - 0) * (480 - 20)) / (15 - 0)) + 20)    }}" stroke-width="4" stroke="rgb(27, 87, 110)"  stroke-linecap="round"/>
+
+    {% else %}
+    <line class="line" x1="{{   (35+(loop.index0)*32.8571428)   }}" y1="{{   ((((15-point - 0) * (480 - 20)) / (15 - 0)) + 20)   }}" x2="{{     (35+(loop.index0+1)*32.8571428)   }}" y2="{{    ((((15-endpoints[1][loop.index0+1] - 0) * (480 - 20)) / (15 - 0)) + 20)    }}" stroke-width="4" stroke="rgb(27, 87, 110)"  stroke-linecap="round"/>
+    {% endif %}
     {% endfor %}
 
+    {% for point in endpoints[2] %}
+    {% if loop.index0 == 13 %}
+    <line class="line" x1="{{   (35+(loop.index0)*32.8571428)   }}" y1="{{   ((((15-point - 0) * (480 - 20)) / (15 - 0)) + 20)   }}" x2="{{     (35+(loop.index0+1)*32.8571428)   }}" y2="{{    ((((15-point - 0) * (480 - 20)) / (15 - 0)) + 20)    }}" stroke-width="4" stroke="rgb(161, 30, 161)"  stroke-linecap="round"/>
 
+    {% else %}
+    <line class="line" x1="{{   (35+(loop.index0)*32.8571428)   }}" y1="{{   ((((15-point - 0) * (480 - 20)) / (15 - 0)) + 20)   }}" x2="{{     (35+(loop.index0+1)*32.8571428)   }}" y2="{{    ((((15-endpoints[2][loop.index0+1] - 0) * (480 - 20)) / (15 - 0)) + 20)    }}" stroke-width="4" stroke="rgb(161, 30, 161)"  stroke-linecap="round"/>
+    {% endif %}
+    {% endfor %}
+
+ 
 </svg>
