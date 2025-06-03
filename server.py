@@ -156,20 +156,7 @@ def borough():
         polGraphDat[2].append(float(f[requestedborough][str(i)][2]))
         polGraphDat[3].append(float(f['Ny'][str(i)][0]))
         
-    '''
-    script:
-    for __(year)__ __(lowest)__ had a __(low, moderate, high)__ polution.  __(second lowest)__ had a
-    __(low, moderate, high)__ higher level of pollution. __(third lowest)__ and __(fourth lowest)__ followed.
-    __(fith lowest)__ was last with a pollution of [[DATA]]
-    
-    the most annoying part of this is keeping track of which 
-    datapoint goes with which borogh without messing up the order 
-    in a way where we can know the order of how polluted a borogh is.
-    
-    this goes off of brightness data, not because thats a good idea, but because thats what ive already implemented
-    
-    I have absolutely no idea how to do this, but here goes:
-    '''
+
     # map data
     
     borough = [requestedborough + " average", requestedborough + " summer average", requestedborough + " winter average", "citywide average"]
