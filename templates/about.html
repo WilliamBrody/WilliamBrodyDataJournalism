@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html id="all">
-    <head>
-        <link rel="stylesheet" href="style.css">
-    </head>
-    
+     {% include 'header.html' %}
     <body>
-        {% include 'header.html' %}
         <div>
             {% include 'navbar.html' %}
         </div>
+        <h1>PLACEHOLDER FOR MICROPAGE {{ borough }}</h1>
         <div>
             <p>
                 This project serves to show how the air quality in NYC has changed over time. To this end, the air quality of each bourough shown for easy viewing of the data.
             </p>
-            
+            <img src="IMG_5357.JPG" alt="" width="605" height="806">
+            <br>
+
+            <img src="IMG_5358.JPG" alt="" width="605" height="806">
         </div>
         {% include 'footer.html' %}
     </body>

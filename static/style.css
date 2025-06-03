@@ -11,9 +11,12 @@ body{
 
   }
   
-  svg{
-    border-style: solid;
-    border-width: 1px;
-    display: flex;
-    justify-content: center;
-  }
+svg{
+  border-style: solid;
+  border-width: 1px;
+  display: flex;
+  justify-content: center;
+}
+img {
+  transform: rotate(-90deg);
+}

@@ -34,6 +34,34 @@ QUESTIONS FOR MR. GOHDE:
 - how should i clean up my graph (all the plots are too close together)
 """
 
+"""
+TODO:
+- data is parsed for micropage text generation, but still need to actually generate text
+- need to actually flesh out about page
+- make a proper footer
+- clean up small things
+- VIDEO!!!
+
+"""
+
+boroughs = {
+    'Mh' : 'Manhattan',
+    'Bx' : 'Bronx',
+    'Qs' : 'Queens',
+    'Br' : 'Brooklyn',
+    'Si' : 'Staten Island',
+    'Ny' : 'New York City'
+}
+
+def giveSeverity(n: float):
+    if n < 33.33:
+        return 'mild'
+    if n > 33.33 and n < 66.66:
+        return 'moderate'
+    if n > 66.66:
+        return 'severe'
+    return 'giveSeverity ERROR DEFAULT 1'
+
 @app.route('/')
 def index():
     all_boroughs = []
@@ -75,10 +103,39 @@ def index():
         brightData[2] = brightData[2] / 15
         brightData[3] = brightData[3] / 15
         brightData[4] = brightData[4] / 15
+        requestedYear = '2009-2023'
 
-    print(brightData)
-
-    return render_template('index.html', all_borough=all_boroughs, all_years=all_years, requestedYear=requestedYear, boroughBright=brightData)
+    
+    
+    
+    # Start the nightmare of how to do the dynamic text
+    '''
+    script:
+    for __(year)__ __(lowest)__ had a __(low, moderate, high)__ polution.  __(second lowest)__ had a
+    __(low, moderate, high)__ higher level of pollution. __(third lowest)__ and __(fourth lowest)__ followed.
+    __(fith lowest)__ was last with a pollution of [[DATA]]
+    
+    the most annoying part of this is keeping track of which 
+    datapoint goes with which borogh without messing up the order 
+    in a way where we can know the order of how polluted a borogh is.
+    
+    this goes off of brightness data, not because thats a good idea, but because thats what ive already implemented
+    
+    I have absolutely no idea how to do this, but here goes:
+    '''
+    # map data
+    
+    borough = ['Mh', 'Br', 'Qs', 'Bx', 'Si']
+    zDat = list(sorted(list(zip(brightData, borough))))
+    print(zDat)
+    # this creates a list of tuples that we will use to do the text generation
+    dynamic_text = "For " + str(requestedYear) + ", " + boroughs[zDat[0][1]] + " had a " + giveSeverity(zDat[0][0]) + " pollution level, which was the best of all five borough. "
+    dynamic_text = dynamic_text + boroughs[zDat[1][1]] + " came in second, with a " + giveSeverity(zDat[1][0]) + " level of pollution. "
+    dynamic_text = dynamic_text + boroughs[zDat[2][1]] + " and " + boroughs[zDat[3][1]] + " came in 3rd and 4th place. "
+    dynamic_text = dynamic_text + boroughs[zDat[4][1]] + " was the most polluted."
+    
+    
+    return render_template('index.html', all_borough=all_boroughs, all_years=all_years, requestedYear=requestedYear, boroughBright=brightData, dynamic_text=dynamic_text)
 
 
 @app.route('/about')
@@ -97,7 +154,34 @@ def borough():
         polGraphDat[0].append(float(f[requestedborough][str(i)][0]))
         polGraphDat[1].append(float(f[requestedborough][str(i)][1]))
         polGraphDat[2].append(float(f[requestedborough][str(i)][2]))
-        polGraphDat[3].append(float(f['Ny'][str(i)][2]))
+        polGraphDat[3].append(float(f['Ny'][str(i)][0]))
+        
+    '''
+    script:
+    for __(year)__ __(lowest)__ had a __(low, moderate, high)__ polution.  __(second lowest)__ had a
+    __(low, moderate, high)__ higher level of pollution. __(third lowest)__ and __(fourth lowest)__ followed.
+    __(fith lowest)__ was last with a pollution of [[DATA]]
+    
+    the most annoying part of this is keeping track of which 
+    datapoint goes with which borogh without messing up the order 
+    in a way where we can know the order of how polluted a borogh is.
+    
+    this goes off of brightness data, not because thats a good idea, but because thats what ive already implemented
+    
+    I have absolutely no idea how to do this, but here goes:
+    '''
+    # map data
+    
+    borough = [requestedborough + " average", requestedborough + " summer average", requestedborough + " winter average", "citywide average"]
+    # values are for how high the pollution are. starter is beginning of graph, end is end
+    starterVals = [polGraphDat[0][0], polGraphDat[1][0], polGraphDat[2][0], polGraphDat[3][0]]
+    endVals = [polGraphDat[0][13], polGraphDat[1][13], polGraphDat[2][13], polGraphDat[3][13]]
+    zDatStart = list(sorted(list(zip(starterVals, borough))))
+    zDatEnd = list(sorted(list(zip(endVals, borough))))
+    print(zDatStart)
+    print(zDatEnd)
+    # this creates a list of tuples that we will use to do the text generation
+    dynamic_text = 'asdf'
     return render_template('micro.html', borough=requestedborough, endpoints=polGraphDat)
 
 
