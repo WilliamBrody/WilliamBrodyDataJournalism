@@ -36,12 +36,12 @@ QUESTIONS FOR MR. GOHDE:
 
 """
 TODO:
-- data is parsed for micropage text generation, but still need to actually generate text
 - need to actually flesh out about page
-- make a proper footer
 - clean up small things
 - VIDEO!!!
-- add citation for source
+- BIG TAKEAWAYS
+- make header h1 tag gud
+- UNITS
 """
 
 boroughs = {
