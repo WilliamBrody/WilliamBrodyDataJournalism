@@ -61,6 +61,14 @@ def giveSeverity(n: float):
     if n > 66.66:
         return 'severe'
     return 'giveSeverity ERROR DEFAULT 1'
+def giveSeverity115(n: float):
+    if n <= 5:
+        return 'mild'
+    if n > 5 and n < 10:
+        return 'moderate'
+    if n >= 10:
+        return 'severe'
+    return 'giveSeverity ERROR DEFAULT 1'
 
 @app.route('/')
 def index():
@@ -168,8 +176,14 @@ def borough():
     print(zDatStart)
     print(zDatEnd)
     # this creates a list of tuples that we will use to do the text generation
-    dynamic_text = 'asdf'
-    return render_template('micro.html', borough=requestedborough, endpoints=polGraphDat)
+    dynamic_text = 'In 2009, ' + zDatStart[3][1] + " had a " + giveSeverity115(zDatStart[3][0]) + " pollution level, and was the highest metric. "
+    dynamic_text = dynamic_text + zDatStart[2][1] + " and " + zDatStart[1][1] + " followed, with a " + giveSeverity115(zDatStart[2][0]) + " and " + giveSeverity115(zDatStart[1][0]) + " level of pollution."
+    dynamic_text = dynamic_text + zDatStart[0][1] + " had the lowest pollution."
+   
+    dynamic_text = 'In 2023, ' + zDatEnd[3][1] + " had a " + giveSeverity115(zDatEnd[3][0]) + " pollution level, and was the highest metric. "
+    dynamic_text = dynamic_text + zDatEnd[2][1] + " and " + zDatEnd[1][1] + " followed, with a " + giveSeverity115(zDatEnd[2][0]) + " and " + giveSeverity115(zDatEnd[1][0]) + " level of pollution."
+    dynamic_text = dynamic_text + zDatEnd[0][1] + " had the lowest pollution."
+    return render_template('micro.html', borough=requestedborough, endpoints=polGraphDat, dynamic_text=dynamic_text)
 
 
 

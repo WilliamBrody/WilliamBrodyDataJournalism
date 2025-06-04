@@ -7,7 +7,24 @@
 
         <h1>PLACEHOLDER FOR MICROPAGE {{ borough }}</h1>
         {% include 'line_graph.svg' %}
-        {{ endpoints }}
+        <div id="legend" style="display: flex; justify-content: center;">
+            <svg fill="#ececec" stroke="black" viewbox="0 0 200 200" width="15%" height="15%" xmlns="http://www.w3.org/2000/svg">
+                <rect x="10" y="10" width="12" height="30" stroke-width="0.1" fill="rgb(184, 96, 24)"/>
+                <text x="32" y="25" text-anchor="front" stroke-width="0.01" style="fill: black;" font-size="0.6rem">{{ borough }} year average</text>
+
+                <rect x="10" y="50" width="12" height="30" stroke-width="0.1" fill="rgb(27, 87, 110)"/>
+                <text x="32" y="65" text-anchor="front" stroke-width="0.01" style="fill: black;" font-size="0.6rem">{{ borough }} summer average</text>
+
+                <rect x="10" y="90" width="12" height="30" stroke-width="0.1" fill="rgb(161, 30, 161)"/>
+                <text x="32" y="105" text-anchor="front" stroke-width="0.01" style="fill: black;" font-size="0.6rem">{{ borough }} winter average</text>
+
+                <rect x="10" y="130" width="12" height="30" stroke-width="0.1" fill="rgb(30, 139, 161)"/>
+                <text x="32" y="145" text-anchor="front" stroke-width="0.01" style="fill: black;" font-size="0.6rem">NYC year average</text>
+
+                <text x="100" y=" 175" text-anchor="middle" stroke-width="0.01" style="fill: black;" font-size="1.2rem">Legend</text>
+            </svg>
+        </div>
+        {{ dynamic_text }}
         {% include 'footer.html' %}
     </body>
 </html>
