@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
+<title>{{ requestedYear }} Overview</title>
 {% include 'header.html' %}
 <body>
   {% include 'navbar.html' %}
-  <h1>Average citywide pollution data for {{ requestedYear }}</h1>
+  <h1 style="display: flex; justify-content: center;">Average citywide pollution data for {{ requestedYear }}</h1>
   <div id="maps">
     <div id="mapsvg" style="display: flex; justify-content: center;">
       {% include 'NYC_boroughs.svg' %}
@@ -57,18 +58,27 @@
       document.getElementById("Straten_Island").setAttribute("fill", "hsl(80, 40%, " + x + "%)");
     </script>
 
-    <div id="legend" style="display: flex; justify-content: center;">
+    <div id="legend" style="display: flex; justify-content: center; scale: 80%;">
       <svg fill="#ececec" stroke="black" viewbox="0 0 200 65" width="50%" height="10%" xmlns="http://www.w3.org/2000/svg">
         {% for i in range(10) %}
         <rect x="{{40+i+11*i}}" y="10" width="12" height="30" stroke-width="0.1" fill="hsl(80, 40%, {{100-i*10}}%)"/>
-        <text x="{{46+i+11*i}}" y="45" text-anchor="middle" stroke-width="0.3"  font-size="0.3rem">{{ ((i+1) - 0) / (10 - 0) * (15 - 0) + 0 }}</text>
+        <text x="{{46+i+11*i}}" y="45" text-anchor="middle" stroke-width="0.01" style="fill: black;"  font-size="0.3rem">{{ ((i+1) - 0) / (10 - 0) * (15 - 0) + 0 }}</text>
         {% endfor %}
-        <text x="100" y="60" text-anchor="middle" stroke-width="0.01" style="fill: black;" font-size="0.6rem">Average *POLLUTION* (years)</text>
+        <text x="100" y="60" text-anchor="middle" stroke-width="0.01" style="fill: black;" font-size="0.6rem">Avg fine particle count (PM 2.5) (mcg/m3)</text>
       </svg>
     </div>
 
   </div>
   {{dynamic_text}}
+  <p>
+    some big takeaways form this project:
+    <ul>
+      <li>Overall, Air pollution in NYC is improving dramatically!</li>
+      <li>Manhattan consistantly has the worst air pollution, but it is also improving along side the other four boroughs</li>
+      <li>Pollution was highest in the summer.</li>
+    </ul>
+  </p>
+
   <div style="display: flex; justify-content: center; scale: 200%;">
     <form action="/" method="GET">
       <label for="year">Choose a year:</label><br>

@@ -36,10 +36,7 @@ QUESTIONS FOR MR. GOHDE:
 
 """
 TODO:
-- need to actually flesh out about page
-- clean up small things
 - VIDEO!!!
-- BIG TAKEAWAYS
 - make header h1 tag gud
 - UNITS
 """
@@ -183,7 +180,8 @@ def borough():
     dynamic_text = 'In 2023, ' + zDatEnd[3][1] + " had a " + giveSeverity115(zDatEnd[3][0]) + " pollution level, and was the highest metric. "
     dynamic_text = dynamic_text + zDatEnd[2][1] + " and " + zDatEnd[1][1] + " followed, with a " + giveSeverity115(zDatEnd[2][0]) + " and " + giveSeverity115(zDatEnd[1][0]) + " level of pollution."
     dynamic_text = dynamic_text + zDatEnd[0][1] + " had the lowest pollution."
-    return render_template('micro.html', borough=requestedborough, endpoints=polGraphDat, dynamic_text=dynamic_text)
+    
+    return render_template('micro.html', borough=boroughs[requestedborough], endpoints=polGraphDat, dynamic_text=dynamic_text)
 
 
 

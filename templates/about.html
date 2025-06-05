@@ -1,19 +1,50 @@
 <!DOCTYPE html>
 <html id="all">
+    <title>About</title>
      {% include 'header.html' %}
     <body>
         <div>
             {% include 'navbar.html' %}
         </div>
-        <h1>PLACEHOLDER FOR MICROPAGE {{ borough }}</h1>
+        <h1 style="display: flex; justify-content: center;">About</h1>
         <div>
-            <p>
-                This project serves to show how the air quality in NYC has changed over time. To this end, the air quality of each bourough shown for easy viewing of the data.
+            <p style="display: flex; justify-content: center;">
+                This project serves to show how the air quality in NYC has changed over time. To this end, 
+                the air quality of each Borough shown for easy viewing of the trends. Air pollution is a problem on the global scale currently, 
+    
+                Important termenology:
+                <ul>
+                    <li>Borough: cultural and geographic region in New York City. The five boroughs in NYC are Manhattan, Brooklyn, Queens, Staten Island, and The Bronx</li>
+                    <li>Fine particles: any particulate matter in the air that has a diamater that is smaller than 2.5 micrometers</li>
+                </ul>
+
             </p>
-            <img src="IMG_5357.JPG" alt="" width="605" height="806">
+            <p>
+                Initially, my project focused on the entire world. I wanted to represent how confident the citizens of each nation were in if their politicians could properly address climate changed.
+                I had to scrap this idea after realizing that my dataset did not meet the standards I needed for good and reliable journalism. Additionally, the scope of the project would have been too
+                large for me to complete in the given time. Instead, I pivoted to discuss air pollution in New York City, redesigning my prototypes to incorperate this new topic with the feedback I got from the old one. 
+            </p>
+            <img src="pt1micro.JPG" alt="" width="605" height="806" style="display: flex; justify-content: center;">
+            <p>
+                In my original prototype for the individual nations, I planned on using a line graph to represent governmental trust over time. This is largely what I settled on for the final website, with a few key differences.
+                The feedback given to me was invaluable in the design process. It helped me make my design more user understandable. One key area of feedback was that the scaling of my graph was not easily understandable. I corrected for this in the final iteration.
+            </p>
+            <img src="pt1macro.JPG" alt="" width="605" height="806" style="display: flex; justify-content: center;">
+            <p>
+                Other than moving components around, my macropage largely stayed the same. One difference is that I used a much smaller map in the final iteration.
+            </p>
+            <img src="pt2micro.JPG" alt="" width="605" height="806" style="display: flex; justify-content: center;">
+            <p>
+                This is the prototype I settled on for the individual borogh pages after changing my topic. It incorporates feedback on the legebility of the graph
+                and the key. Additionally, It makes the scale of the y axis much more intuitive. This is very similar to the design that I settled on for my actual page, with only a few things moved around for better viewing on different display scales.
+            </p>
             <br>
 
-            <img src="IMG_5358.JPG" alt="" width="605" height="806">
+            <img src="pt2macro.JPG" alt="" width="605" height="806" style="display: flex; justify-content: center;">
+            <p>
+                This prototype was made for the overview page. It is the iteration that followed after my initial data and project outline proved incompatable.
+                the SVG map is much more granular, giving a better view of the changing air pollution levels in smaller areas.
+            </p>
         </div>
         {% include 'footer.html' %}
     </body>

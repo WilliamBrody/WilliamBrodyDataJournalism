@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html>
+    <title>{{ borough }} air pollution</title>
     {% include 'header.html' %}
     <body>
         
         {% include 'navbar.html' %}
 
-        <h1>PLACEHOLDER FOR MICROPAGE {{ borough }}</h1>
-        {% include 'line_graph.svg' %}
+        <h1 style="display: flex; justify-content: center;">Fine particles (PM 2.5) in {{ borough }} (mcg/m3) by season.</h1>
+        <div style="display: flex; justify-content: center;">
+            {% include 'line_graph.svg' %}
+        </div>
+        
         <div id="legend" style="display: flex; justify-content: center;">
             <svg fill="#ececec" stroke="black" viewbox="0 0 200 200" width="15%" height="15%" xmlns="http://www.w3.org/2000/svg">
                 <rect x="10" y="10" width="12" height="30" stroke-width="0.1" fill="rgb(184, 96, 24)"/>
@@ -24,7 +28,10 @@
                 <text x="100" y=" 175" text-anchor="middle" stroke-width="0.01" style="fill: black;" font-size="1.2rem">Legend</text>
             </svg>
         </div>
-        {{ dynamic_text }}
+        <div>
+            {{ dynamic_text }}
+        </div>
+        
         {% include 'footer.html' %}
     </body>
 </html>
