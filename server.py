@@ -37,8 +37,6 @@ QUESTIONS FOR MR. GOHDE:
 """
 TODO:
 - VIDEO!!!
-- make header h1 tag gud
-- UNITS
 """
 
 boroughs = {
